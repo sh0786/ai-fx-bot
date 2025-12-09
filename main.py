@@ -60,6 +60,7 @@ task1 = Task(description=f"Analyze: {market_info}. BUY or SELL?", agent=analyst,
 task2 = Task(description="Write short telegram msg with signal and price.", agent=writer, expected_output="Message string")
 
 # --- 5. RUN ---
-crew = Crew(agents=[analyst, writer], tasks=[task1, task2])
+ crew = Crew(agents=[analyst, writer], tasks=[task1, task2], memory=False)
+
 result = crew.kickoff()
 bot.send_message(CHAT_ID, str(result))
