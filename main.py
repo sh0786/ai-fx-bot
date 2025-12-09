@@ -1,6 +1,9 @@
 # Ready to Fly
 import os
 import sys
+os.environ["OPENAI_API_BASE"] = "https://api.x.ai/v1"
+os.environ["OPENAI_BASE_URL"] = "https://api.x.ai/v1"
+
 from crewai import Agent, Task, Crew
 from langchain_openai import ChatOpenAI
 import yfinance as yf
